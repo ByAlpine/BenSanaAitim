@@ -91,6 +91,99 @@
     <div id="messages"></div>
   </div>
 
+ <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barışalım mı?</title>
+  <style>
+    body {
+      background: #222;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background: rgba(30,30,30,0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #000;
+    }
+    .gif {
+      width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+      transition: width 0.7s cubic-bezier(0.4,0,0.2,1), height 0.7s cubic-bezier(0.4,0,0.2,1);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .neon-text {
+      color: #fff700;
+      font-weight: bold;
+      font-size: 2.2em;
+      text-shadow: 0 0 10px #fff700, 0 0 20px #fff700;
+      margin-bottom: 30px;
+    }
+    .buttons {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .yes {
+      background: #00ff00;
+      color: #222;
+      font-weight: bold;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.3em;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ff00;
+      transition: background 0.2s;
+    }
+    .no {
+      background: #ff0000;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.3em;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff0000;
+      transition: background 0.2s, font-size 0.3s, padding 0.3s;
+    }
+    #messages {
+      margin-top: 30px;
+      min-height: 40px;
+    }
+    .final-message {
+      color: #fff700;
+      font-weight: bold;
+      font-size: 2em;
+      text-shadow: 0 0 10px #fff700, 0 0 20px #fff700;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img id="gif" src="gif1.gif" alt="gif1" class="gif">
+    <div id="question" class="neon-text">Barışalım mı?</div>
+    <div class="buttons">
+      <button id="yesBtn" class="yes">Evet</button>
+      <button id="noBtn" class="no">Hayır</button>
+    </div>
+    <div id="messages"></div>
+  </div>
+
   <script>
   const yesBtn = document.getElementById('yesBtn');
   const noBtn = document.getElementById('noBtn');
@@ -160,5 +253,7 @@
     messagesDiv.innerHTML = `<div class='neon-text' style='font-size:2em;margin-top:30px;text-align:center;'>Birlikte yeniden başlamak, en güzel başlangıçtır.</div>`;
   });
 </script>
+</body>
+</html>
 </body>
 </html>
