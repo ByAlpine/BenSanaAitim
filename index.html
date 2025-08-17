@@ -92,74 +92,73 @@
   </div>
 
   <script>
-    const yesBtn = document.getElementById('yesBtn');
-    const noBtn = document.getElementById('noBtn');
-    const gif = document.getElementById('gif');
-    const question = document.getElementById('question');
-    const messagesDiv = document.getElementById('messages');
+  const yesBtn = document.getElementById('yesBtn');
+  const noBtn = document.getElementById('noBtn');
+  const gif = document.getElementById('gif');
+  const question = document.getElementById('question');
+  const messagesDiv = document.getElementById('messages');
 
-    const noMessages = [
-      'Beraber Olalım mı?',
-      'Lütfen beni yalnız bırakma...',
-      'Emin misin?',
-      'Gerçekten mi? Kalbim Kırılıyor...',
-      'Bu Son Şansımız...',
-      'Yalnızlık Çok Zor...',
-      'Seni Hâlâ Önemsiyorum...',
-      'Birlikte Daha İyiydik...',
-      'Hoşça Kal...',
-      '...'
-    ];
+  const noMessages = [
+    'Beraber Olalım mı?',
+    'Lütfen beni yalnız bırakma...',
+    'Emin misin?',
+    'Gerçekten mi? Kalbim Kırılıyor...',
+    'Bu Son Şansımız...',
+    'Yalnızlık Çok Zor...',
+    'Seni Hâlâ Önemsiyorum...',
+    'Birlikte Daha İyiydik...',
+    'Hoşça Kal...',
+    '...'
+  ];
 
-    let noCount = 0;
-    const maxNo = 10;
+  let noCount = 0;
+  const maxNo = 10;
 
-    noBtn.addEventListener('click', () => {
-      noCount++;
+  noBtn.addEventListener('click', () => {
+    noCount++;
 
-      if (noCount === 1) {
-        gif.src = 'gif2.gif';
-        gif.style.width = '300px';
-        gif.style.height = 'auto';
-
-        // Başlık yazısını değiştir
-        question.textContent = 'Beraber Olalım mı?';
-      } else if (noCount <= maxNo) {
-        let newSize = 300 + noCount * 30;
-        gif.style.width = newSize + 'px';
-
-        let newFontNo = 1.3 - noCount * 0.08;
-        noBtn.style.fontSize = (newFontNo > 0.7 ? newFontNo : 0.7) + 'em';
-        noBtn.style.padding = (15 - noCount) + 'px ' + (40 - noCount * 2) + 'px';
-
-        let newFontYes = 1.3 + noCount * 0.08;
-        yesBtn.style.fontSize = newFontYes + 'em';
-        yesBtn.style.padding = (15 + noCount) + 'px ' + (40 + noCount * 2) + 'px';
-      }
-
-      let msgIndex = noCount - 1;
-      if (msgIndex < noMessages.length) {
-        messagesDiv.innerHTML = `<div class='neon-text'>${noMessages[msgIndex]}</div>`;
-      } else {
-        messagesDiv.innerHTML = `<div class='neon-text'>${noMessages[noMessages.length - 1]}</div>`;
-      }
-
-      if (noCount >= maxNo) {
-        noBtn.disabled = true;
-        noBtn.style.opacity = 0.5;
-      }
-    });
-
-    yesBtn.addEventListener('click', () => {
-      gif.src = 'gif3.gif';
+    if (noCount === 1) {
+      gif.src = 'gif2.gif';
       gif.style.width = '300px';
       gif.style.height = 'auto';
-      gif.style.marginBottom = '20px';
-      question.style.display = 'none';
-      yesBtn.style.display = 'none';
-      noBtn.style.display = 'none';
-      messagesDiv.innerHTML = `<div class='neon-text' style='font-size:2em;margin-top:30px;text-align:center;'>Birlikte yeniden başlamak, en güzel başlangıçtır.</div>`;
-    });
-  </script>
+    }
+
+    if (noCount <= maxNo) {
+      let newSize = 300 + noCount * 30;
+      gif.style.width = newSize + 'px';
+
+      let newFontNo = 1.3 - noCount * 0.08;
+      noBtn.style.fontSize = (newFontNo > 0.7 ? newFontNo : 0.7) + 'em';
+      noBtn.style.padding = (15 - noCount) + 'px ' + (40 - noCount * 2) + 'px';
+
+      let newFontYes = 1.3 + noCount * 0.08;
+      yesBtn.style.fontSize = newFontYes + 'em';
+      yesBtn.style.padding = (15 + noCount) + 'px ' + (40 + noCount * 2) + 'px';
+
+      let msgIndex = noCount - 1;
+      const message = msgIndex < noMessages.length ? noMessages[msgIndex] : noMessages[noMessages.length - 1];
+
+      // Hataları düzelten satırlar:
+      question.textContent = message; // Üstteki neon yazıyı güncelle
+      messagesDiv.innerHTML = `<div class='neon-text'>${message}</div>`; // Alttaki mesajı göster
+    }
+
+    if (noCount >= maxNo) {
+      noBtn.disabled = true;
+      noBtn.style.opacity = 0.5;
+    }
+  });
+
+  yesBtn.addEventListener('click', () => {
+    gif.src = 'gif3.gif';
+    gif.style.width = '300px';
+    gif.style.height = 'auto';
+    gif.style.marginBottom = '20px';
+    question.style.display = 'none';
+    yesBtn.style.display = 'none';
+    noBtn.style.display = 'none';
+    messagesDiv.innerHTML = `<div class='neon-text' style='font-size:2em;margin-top:30px;text-align:center;'>Birlikte yeniden başlamak, en güzel başlangıçtır.</div>`;
+  });
+</script>
 </body>
 </html>
