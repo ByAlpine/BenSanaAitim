@@ -1,165 +1,165 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barışalım mı?</title>
-    <style>
-        body {
-            background: #222;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background: rgba(30,30,30,0.9);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 0 30px #000;
-        }
-        .gif {
-            width: 300px;
-            height: auto;
-            margin-bottom: 20px;
-            transition: width 0.7s cubic-bezier(0.4,0,0.2,1), height 0.7s cubic-bezier(0.4,0,0.2,1);
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .neon-text {
-            color: #fff700;
-            font-weight: bold;
-            font-size: 2.2em;
-            text-shadow: 0 0 10px #fff700, 0 0 20px #fff700;
-            margin-bottom: 30px;
-        }
-        .buttons {
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .yes {
-            background: #00ff00;
-            color: #222;
-            font-weight: bold;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.3em;
-            border-radius: 10px;
-            margin-right: 20px;
-            cursor: pointer;
-            box-shadow: 0 0 10px #00ff00;
-            transition: background 0.2s;
-        }
-        .no {
-            background: #ff0000;
-            color: #fff;
-            font-weight: bold;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.3em;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 0 10px #ff0000;
-            transition: background 0.2s, font-size 0.3s, padding 0.3s;
-        }
-        #messages {
-            margin-top: 30px;
-            min-height: 40px;
-        }
-        .final-message {
-            color: #fff700;
-            font-weight: bold;
-            font-size: 2em;
-            text-shadow: 0 0 10px #fff700, 0 0 20px #fff700;
-            margin-top: 30px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barışalım mı?</title>
+  <style>
+    body {
+      background: #222;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background: rgba(30,30,30,0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #000;
+    }
+    .gif {
+      width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+      transition: width 0.7s cubic-bezier(0.4,0,0.2,1), height 0.7s cubic-bezier(0.4,0,0.2,1);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .neon-text {
+      color: #fff700;
+      font-weight: bold;
+      font-size: 2.2em;
+      text-shadow: 0 0 10px #fff700, 0 0 20px #fff700;
+      margin-bottom: 30px;
+    }
+    .buttons {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .yes {
+      background: #00ff00;
+      color: #222;
+      font-weight: bold;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.3em;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ff00;
+      transition: background 0.2s;
+    }
+    .no {
+      background: #ff0000;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.3em;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff0000;
+      transition: background 0.2s, font-size 0.3s, padding 0.3s;
+    }
+    #messages {
+      margin-top: 30px;
+      min-height: 40px;
+    }
+    .final-message {
+      color: #fff700;
+      font-weight: bold;
+      font-size: 2em;
+      text-shadow: 0 0 10px #fff700, 0 0 20px #fff700;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-    <img id="gif" src="gif1.gif" alt="gif1" class="gif" style="width:300px;height:auto;margin-bottom:20px;">
-        <div id="question" class="neon-text">Barışalım mı?</div>
-        <div class="buttons">
-            <button id="yesBtn" class="yes">Evet</button>
-            <button id="noBtn" class="no">Hayır</button>
-        </div>
-        <div id="messages"></div>
+  <div class="container">
+    <img id="gif" src="gif1.gif" alt="gif1" class="gif">
+    <div id="question" class="neon-text">Barışalım mı?</div>
+    <div class="buttons">
+      <button id="yesBtn" class="yes">Evet</button>
+      <button id="noBtn" class="no">Hayır</button>
     </div>
-    <script>
-        const yesBtn = document.getElementById('yesBtn');
-        const noBtn = document.getElementById('noBtn');
-        const gif = document.getElementById('gif');
-        const question = document.getElementById('question');
-        const messagesDiv = document.getElementById('messages');
+    <div id="messages"></div>
+  </div>
 
-        const noMessages = [
-            'Barışalım mı?',
-            'Lütfen beni yalnız bırakma...',
-            'Emin misin?',
-            'Gerçekten mi? Kalbim Kırılıyor...',
-            'Bu Son Şansımız...',
-            'Yalnızlık Çok Zor...',
-            'Seni Hâlâ Önemsiyorum...',
-            'Birlikte Daha İyiydik...',
-            'Hoşça Kal...'
-        ];
-        let noCount = 0;
-        let maxNo = 10;
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const gif = document.getElementById('gif');
+    const question = document.getElementById('question');
+    const messagesDiv = document.getElementById('messages');
 
-        noBtn.addEventListener('click', () => {
-            noCount++;
-            if (noCount === 1) {
-                gif.src = 'gif2.gif'; // gif2
-                gif.style.width = '300px';
-                gif.style.height = 'auto';
-            } else if (noCount <= maxNo) {
-                // gif2 ve evet büyüsün, hayır küçülsün
-                let newSize = 300 + noCount * 30;
-                gif.style.transition = 'width 0.7s cubic-bezier(0.4,0,0.2,1), height 0.7s cubic-bezier(0.4,0,0.2,1)';
-                gif.style.width = newSize + 'px';
-                gif.style.height = 'auto';
-                // Hayır butonu küçülüyor
-                let newFontNo = 1.3 - noCount * 0.08;
-                noBtn.style.fontSize = (newFontNo > 0.7 ? newFontNo : 0.7) + 'em';
-                noBtn.style.padding = (15 - noCount) + 'px ' + (40 - noCount * 2) + 'px';
-                // Evet butonu gif2 ile aynı oranda büyüyor
-                let newFontYes = 1.3 + noCount * 0.08;
-                yesBtn.style.fontSize = newFontYes + 'em';
-                yesBtn.style.padding = (15 + noCount) + 'px ' + (40 + noCount * 2) + 'px';
-            }
-            // Mesajları sırayla göster
-            let msgIndex = noCount - 1;
-            if (msgIndex < noMessages.length) {
-                messagesDiv.innerHTML = `<div class='neon-text'>${noMessages[msgIndex]}</div>`;
-            } else {
-                messagesDiv.innerHTML = `<div class='neon-text'>${noMessages[noMessages.length-1]}</div>`;
-            }
-            if (noCount >= maxNo) {
-                noBtn.disabled = true;
-                noBtn.style.opacity = 0.5;
-            }
-        });
+    const noMessages = [
+      'Beraber Olalım mı?',
+      'Lütfen beni yalnız bırakma...',
+      'Emin misin?',
+      'Gerçekten mi? Kalbim Kırılıyor...',
+      'Bu Son Şansımız...',
+      'Yalnızlık Çok Zor...',
+      'Seni Hâlâ Önemsiyorum...',
+      'Birlikte Daha İyiydik...',
+      'Hoşça Kal...',
+      '...'
+    ];
 
-        yesBtn.addEventListener('click', () => {
-            gif.src = 'gif3.gif'; // gif3
-            gif.style.width = '300px';
-            gif.style.height = 'auto';
-            gif.style.marginBottom = '20px';
-            question.style.display = 'none';
-            yesBtn.style.display = 'none';
-            noBtn.style.display = 'none';
-            messagesDiv.innerHTML = `<div class='neon-text' style='font-size:2em;margin-top:30px;text-align:center;'>Birlikte yeniden başlamak, en güzel başlangıçtır.</div>`;
-            // Containerı ortala ve paddingleri ayarla
-            document.querySelector('.container').style.padding = '40px';
-            document.querySelector('.container').style.borderRadius = '20px';
-            document.querySelector('.container').style.boxShadow = '0 0 30px #000';
-        });
-    </script>
+    let noCount = 0;
+    const maxNo = 10;
+
+    noBtn.addEventListener('click', () => {
+      noCount++;
+
+      if (noCount === 1) {
+        gif.src = 'gif2.gif';
+        gif.style.width = '300px';
+        gif.style.height = 'auto';
+
+        // Başlık yazısını değiştir
+        question.textContent = 'Beraber Olalım mı?';
+      } else if (noCount <= maxNo) {
+        let newSize = 300 + noCount * 30;
+        gif.style.width = newSize + 'px';
+
+        let newFontNo = 1.3 - noCount * 0.08;
+        noBtn.style.fontSize = (newFontNo > 0.7 ? newFontNo : 0.7) + 'em';
+        noBtn.style.padding = (15 - noCount) + 'px ' + (40 - noCount * 2) + 'px';
+
+        let newFontYes = 1.3 + noCount * 0.08;
+        yesBtn.style.fontSize = newFontYes + 'em';
+        yesBtn.style.padding = (15 + noCount) + 'px ' + (40 + noCount * 2) + 'px';
+      }
+
+      let msgIndex = noCount - 1;
+      if (msgIndex < noMessages.length) {
+        messagesDiv.innerHTML = `<div class='neon-text'>${noMessages[msgIndex]}</div>`;
+      } else {
+        messagesDiv.innerHTML = `<div class='neon-text'>${noMessages[noMessages.length - 1]}</div>`;
+      }
+
+      if (noCount >= maxNo) {
+        noBtn.disabled = true;
+        noBtn.style.opacity = 0.5;
+      }
+    });
+
+    yesBtn.addEventListener('click', () => {
+      gif.src = 'gif3.gif';
+      gif.style.width = '300px';
+      gif.style.height = 'auto';
+      gif.style.marginBottom = '20px';
+      question.style.display = 'none';
+      yesBtn.style.display = 'none';
+      noBtn.style.display = 'none';
+      messagesDiv.innerHTML = `<div class='neon-text' style='font-size:2em;margin-top:30px;text-align:center;'>Birlikte yeniden başlamak, en güzel başlangıçtır.</div>`;
+    });
+  </script>
 </body>
 </html>
